@@ -45,8 +45,10 @@ public class Main {
             });
 
             //add helpful tip if multiple selections weren't done
-            if (files.size() < 2)
-                output.add(System.lineSeparator() + "Did you know: you can shift-select in the file chooser to select multiple files and test them all at once.");
+            if (files.size() < 2) {
+                Util.printSeparator("Did you know?", output);
+                output.add("You can shift-select in the file chooser to select multiple files and test them all at once.");
+            }
 
             //write the file
             FileWriter fw = new FileWriter("output.txt");
