@@ -1,7 +1,9 @@
 package SE250A4;
 
 import java.util.*;
-import java.util.concurrent.atomic.AtomicInteger;
+
+import static java.lang.System.lineSeparator;
+
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -115,12 +117,12 @@ public class Graph {
                 String result = cycleRecursive(i);
                 if (!result.equals("false")) {
 
-                    return "Cycle:" + System.lineSeparator()
-                            + result + System.lineSeparator()
+                    return "Cycle:" + lineSeparator()
+                            + result + lineSeparator()
                             + (new CycleCounter().startCycleFinder() > 3 ? "No" : "Yes");
                 }
             }
-            return "Topological Order:" + System.lineSeparator() + getTopological();
+            return "Topological Order:" + lineSeparator() + getTopological() + lineSeparator() + "Yes";
         }
 
         /**
